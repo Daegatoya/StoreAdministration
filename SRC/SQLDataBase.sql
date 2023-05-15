@@ -6,7 +6,7 @@ CREATE TABLE `stocks` (
   `awaiting_delivery` INT NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE
-  );
+  ) engine=InnoDB, charset=utf8mb4;;
   
  /* Stored Procedure 1 */
  
