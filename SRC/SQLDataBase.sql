@@ -25,7 +25,7 @@ DELIMITER ;
 
 CREATE PROCEDURE Delivered(IN item_name VARCHAR(50), IN amount_delivered VARCHAR(50))
 BEGIN
-		UPDATE stocks SET awaiting_delivery = awaiting_delivery - amount_delivered, amount = amount + amount_delivered WHERE item = item_name;
+	UPDATE stocks SET awaiting_delivery = awaiting_delivery - amount_delivered, amount = amount + amount_delivered WHERE item = item_name;
 END--
 
 DELIMITER ;
