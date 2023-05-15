@@ -8,7 +8,7 @@ using StoreManagement.Classes;
 
 namespace StoreManagement.Classes
 {
-    internal class DatabaseCheckConnection : DatabaseParent
+    sealed class DatabaseCheckConnection : DatabaseParent
     {
         public DatabaseCheckConnection(string password, string? request)
         : base(password, (string?)request)
