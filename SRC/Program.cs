@@ -43,7 +43,7 @@ namespace StoreManagement
         public static void Password()
         {
             Console.Write("Please enter the password to access the Database : ");
-            pass = Console.ReadLine() ?? "N/A";
+            pass = Console.ReadLine() ?? Convert.ToString(0);
         }
 
         public void Menu()
