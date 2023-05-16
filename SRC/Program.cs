@@ -7,11 +7,11 @@ namespace StoreManagement
 {
     public class Class
     {
-        DatabaseAddItem addItem;
-        DatabaseDeliver deliverDone;
-        DatabaseShow show;
-        DatabaseSendDelivery deliver;
-        static DatabaseCheckConnection checker;
+        DatabaseAddItem? addItem;
+        DatabaseDeliver? deliverDone;
+        DatabaseShow? show;
+        DatabaseSendDelivery? deliver;
+        static DatabaseCheckConnection? checker;
         public static string pass = String.Empty;
 
         public static void Main()
