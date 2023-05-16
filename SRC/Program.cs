@@ -38,7 +38,7 @@ namespace StoreManagement
             Console.WriteLine("\t----------------------\n\n");
             Console.ResetColor();
         }
-
+        
         public static void Password()
         {
             ConsoleKey key;
@@ -54,12 +54,13 @@ namespace StoreManagement
                         Console.Write("\b \b");
                         pass = pass[0..^1];
                         break;
-                    default:
+                    case var value when value != ConsoleKey.Enter:
                         Console.Write("*");
                         pass += pressed.KeyChar;
                         break;
                 }
             } while (key != ConsoleKey.Enter);
+            Console.WriteLine();
         }
 
         public void Menu()
