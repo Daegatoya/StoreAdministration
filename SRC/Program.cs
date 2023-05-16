@@ -16,7 +16,6 @@ namespace StoreManagement
 
         public static void Main()
         {
-
             Header();
             Password();
             checker = new DatabaseCheckConnection(pass, null);
