@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.IO;
 using StoreManagement;
 using StoreManagement.Classes;
@@ -12,7 +12,7 @@ namespace StoreManagement
         DatabaseShow show;
         DatabaseSendDelivery deliver;
         static DatabaseCheckConnection checker;
-        public static string pass;
+        public static string pass = String.Empty;
 
         public static void Main()
         {
@@ -43,7 +43,23 @@ namespace StoreManagement
         public static void Password()
         {
             Console.Write("Please enter the password to access the Database : ");
-            pass = Console.ReadLine() ?? Convert.ToString(0);
+            ConsoleKey key;
+            do
+            {
+                var keyInfo = Console.ReadKey(intercept: true);
+                key = keyInfo.Key;
+
+                if (key == ConsoleKey.Backspace && pass.Length > 0)
+                {
+                    Console.Write("\b \b");
+                    pass = pass[0..^1];
+                }
+                else if (!char.IsControl(keyInfo.KeyChar))
+                {
+                    Console.Write("*");
+                    pass += keyInfo.KeyChar;
+                }
+            } while (key != ConsoleKey.Enter);
         }
 
         public void Menu()
@@ -59,6 +75,8 @@ namespace StoreManagement
                     Header();
                     Console.Write("Enter the name of the new item : ");
                     addItem = new DatabaseAddItem(pass, null, Console.ReadLine() ?? "Unknown");
+                    Console.WriteLine("\nPress ENTER to continue");
+                    Console.ReadKey();
                     break;
                 case 2:
                     Console.Clear();
